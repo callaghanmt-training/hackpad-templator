@@ -1,0 +1,380 @@
+# {{ date }} <br> HPC6: HPC for Life Sciences 
+
+Welcome to the hack pad for HPC6, HPC for Life Sciences course from Research Computing at the University of Leeds!
+
+You can edit this document using [Markdown syntax](https://guides.github.com/features/mastering-markdown/).
+
+## Contents
+
+1. [Links to resource](#Links-to-resources)
+3. [Agenda Day 1](#Agenda-Day-1)
+4. [Agenda Day 2](#Agenda-Day-2)
+5. [What's your name and where do you come from?](#What’s-your-name-and-where-do-you-come-from-And-why-do-you-want-to-use-HPC)
+7. [Setup instructions](#Setup-instructions)
+    5.5. [MacOS/Linux](#MacOS/Linux)
+    5.6. [Windows](#Windows)
+6. [Code along](#Code-along)
+7. [Session 2](#Session-2)
+    7.1. [Setup Google Colab](#Setup-your-colab-session)
+
+## Links to resources
+
+- **Contact Research Computing** - https://bit.ly/arc-help
+- **Request HPC account** - https://leeds.service-now.com/it?id=sc_cat_item&sys_id=4c002dd70f235f00a82247ece1050ebc
+- **Presentation for today** - https://arctraining.github.io/hpc6-life-sciences-2021-06/
+- **Github repository** - https://github.com/ARCTraining/hpc6-life-sciences-2021-06
+- **Linux command cheatsheet** - https://drive.google.com/file/d/0B4hIpRJzq8DPVG5xdEJWcGlRTkU/view
+
+
+{% if morning %}
+## Agenda Day 1
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 0900     | Introduction, project and data management           |
+| 0950     | Break                                      |
+| 1000     | Introduction to the command line           |
+| 1050     | Break and Answers                          |
+| 1100     | Manipulating files and directories, scripting|
+| 1150     | Questions & wrap-up                        |
+| 1200     | Close                                      |
+
+
+## Agenda Day 2
+
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 0900     | Introduction, using Google Colab, using command line tools           |
+| 0950     | Break                                      |
+| 1000     | Completing our variant calling notebook           |
+| 1050     | Break                           |
+| 1100     | Creating a variant calling pipeline and using on ARC4|
+| 1150     | Questions & wrap-up                        |
+| 1200     | Close                                      |
+
+{% else %}
+
+## Agenda Day 1
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 1300     | Introduction, project and data management           |
+| 1350     | Break                                      |
+| 1400     | Introduction to the command line           |
+| 1450     | Break and Answers                          |
+| 1500     | Manipulating files and directories, scripting|
+| 1550     | Questions & wrap-up                        |
+| 1600     | Close                                      |
+
+## Agenda Day 2
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 1300     | Introduction, using Google Colab, using command line tools           |
+| 1350     | Break                                      |
+| 1400     | Completing our variant calling notebook           |
+| 1450     | Break                           |
+| 1500     | Creating a variant calling pipeline and using on ARC4|
+| 1550     | Questions & wrap-up                        |
+| 1600     | Close                                      |
+
+{% endif %}
+
+## What's your name and where do you come from? 
+
+- Edit the hackpad and add your name here!
+ 
+## Setup instructions
+
+For part 1 you will need access to a bash (or bash-like) terminal and a text editor.
+
+### MacOS/Linux
+If you have a macOS or Linux machine you're all set! You've already got a built-in Terminal application that we'll be using today.
+
+### Windows
+If you've got a Window's machine you'll need to install some software so you're ready to go. 
+
+1. First install Visual Studio Code, a text editor tool from this website - https://code.visualstudio.com/download
+
+    Make sure you select the **User Installer 64-bit**
+    ![](https://i.imgur.com/024iei8.png)
+
+1. You are required to download the software tool MobaXTerm for this workshop. Navigate using a web browser to https://mobaxterm.mobatek.net/
+![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/hpc0/moba1.png?token=AE7LNUQLNLZ73XRH3Z34PBDBRTZDG)
+
+2. Select Download 
+    ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/hpc0/moba2.png?token=AE7LNUUZQL2UIV2UEZZMEBTBRTZFC)
+
+3. Click Download Now for the Home Edition
+    ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/hpc0/moba3.png?token=AE7LNUTQD7RI7ITTPY7KROLBRTZFW)
+4. Select MobaXTerm Home Edition v21.0 (Portable edition)
+    ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/hpc0/moba4.png?token=AE7LNUV2AF2EM36SP5M5HNLBRTZGE)
+5. This opens a download prompt for a .zip file. Select Save File and click OK
+    ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/hpc0/moba5.png?token=AE7LNUQM2KPM6SAOJ4S4ZSTBRTZGQ)
+6. Go to your Download folder and find the .zip file you have just downloaded
+    ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/hpc0/moba6.png?token=AE7LNUW6B64H23EK67BKS43BRTZG6)
+
+7. Click Extract in the Ribbon Bar and select Extract All
+    ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/hpc0/moba7.png?token=AE7LNUSDZEUYBHKJMZXBS2LBRTZHK)
+
+8. Using the Wizard window extract the folder at the suggested location
+    ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/hpc0/moba8.png?token=AE7LNUSRNT7K7LMJQZX262LBRTZH4)
+
+9. This should open the extracted folder immediately and allow you to double-click on the MobaXTerm_Personal_21.0 executable to start the application
+    ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/hpc0/moba9.png?token=AE7LNUWK4ML5US6VPPWD2K3BRTZII)
+**And you're all set for HPC6!🎉**
+
+## Code along
+
+### Navigating through the shell:
+
+```bash=
+# we can see where we are in the shell by doing 
+$ pwd
+/home/medacola
+```
+
+`pwd` stands for print working directory and will return the full path of our current location.
+
+We can list the contents of our current directory with the `ls` command which lists the contents of the current directory.
+
+```bash=
+$ ls
+Desktop work junk 
+```
+
+We can also get this in a long-form format by adding the options `-l` to `ls`
+
+```bash=
+$ ls -l
+
+drwxr-xr-x    1 medacola UsersGrp         0 May 29  2020 Desktop
+drw-r--r-x    1 medacola UsersGrp        19 Mar  9  2020 work
+drwxr-xr-x    1 medacola UsersGrp         0 Apr 28 14:58 junk
+```
+
+We can make folders (also referred to as directories) by using the `mkdir` command:
+
+```bash=
+$ mkdir new-folder
+
+$ ls 
+Desktop work junk new-folder
+```
+
+### Downloading data files
+
+We can download a file from the command line using the command `wget` or web get.
+
+```bash=
+$ wget --no-check-certificate https://ndownloader.figshare.com/files/14417834
+```
+
+Or you can use `curl` a slightly more modern command
+
+```bash=
+$ curl -LOk https://ndownloader.figshare.com/files/14417834
+```
+
+We then need to rename it and untar the archive file itself with the commands:
+
+```bash=
+$ mv 14417834 shell_data.tar.gz
+
+$ tar -zxvf shell_data.tar.gz
+```
+
+### Writing and manipulating text files
+
+Almost all files we come into contact with are text files. We can manipulate these from the command line using programs called text editors.
+
+The most basic text editor, available from the Terminal, is `nano` which you can open from the terminal by doing:
+
+```bash=
+$ nano name_of_file
+```
+Where `name_of_file` is the name of file you want to open. This will open a text editor program in your terminal which looks abit like this:
+
+```bash=
+  GNU nano 4.2                        name_of_file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                [ Read 0 lines ]
+^G Get Help  ^O Write Out ^W Where Is  ^K Cut Text  ^J Justify   ^C Cur Pos
+^X Exit      ^R Read File ^\ Replace   ^U Paste Text^T To Spell  ^_ Go To Line
+```
+
+We can then type the contents of our file using the cursor and when we want to save use the key combo `CTRL+O`, this will then ask us to confirm the name of the file to save, we press `Enter` to confirm. 
+
+To exit `nano` we use the key combo `CTRL+X` which will return us to the terminal.
+
+We can also use graphical applications like Visual Studio Code:
+
+1. The visual studio code page on opening
+![](https://i.imgur.com/13CgVMb.png)
+2. To create a new file we click `File` and select `New File` which opens a blank text file we can start editing
+![](https://i.imgur.com/JRUVFs7.png)
+3. For example adding hello world below
+![](https://i.imgur.com/BFR5t8j.png)
+4. We can then save our file by opening the `File` menu and selecting `Save`
+![](https://i.imgur.com/Sm6J9GA.png)
+5. This will then open a folder window where we can specify where we want to save the file
+
+### Examining history and pipes
+
+We can view our previously typed commands in the terminal using the `history` command:
+
+```bash=
+$ history
+
+ 530  [2021-06-03 14:50:12] ls
+  531  [2021-06-03 14:50:18] curl -k https://ndownloader.figshare.com/files/14417834 -L -o shell-data.tar.gz
+  532  [2021-06-03 14:50:21] ls -l
+  533  [2021-06-03 14:50:23] ls
+  534  [2021-06-03 14:50:47] curl -Lk https://ndownloader.figshare.com/files/14417834 -o shell-data.tar.gz
+  535  [2021-06-03 14:50:49] ls -l
+  536  [2021-06-03 14:50:54] rm shell-data.tar.gz
+  537  [2021-06-03 14:50:56] curl -Lk https://ndownloader.figshare.com/files/14417834 -o shell-data.tar.gz
+  538  [2021-06-03 14:50:58] ls
+  539  [2021-06-03 14:50:59] ls -l
+  540  [2021-06-03 14:51:08] wget https://ndownloader.figshare.com/files/14417834
+  541  [2021-06-03 14:51:10] ls -l
+  542  [2021-06-03 14:59:42] mv 14417834 shell_data.tar.gz
+  543  [2021-06-03 14:59:47] tar -zxvf shell_data.tar.gz
+  544  [2021-06-03 14:59:49] ls
+  545  [2021-06-03 14:59:51] ls -l
+  546  [2021-06-03 14:59:57] rm shell-data.tar.gz
+  547  [2021-06-03 15:07:18] clear
+  548  [2021-06-03 15:07:31] ls
+  549  [2021-06-03 15:07:32] cd shell_data
+  550  [2021-06-03 15:07:33] ls
+  551  [2021-06-03 15:10:43] code .
+  552  [2021-06-03 15:26:37] history
+```
+
+We can combine two commands in the terminal using the pipe character `|` this means take the output of one command and use it as the input for another command. 
+
+For instance we could combine `history` and `tail` to look at the last 10 entries from `history`.
+
+```bash=
+$ history | tail -n 10
+
+  542  [2021-06-03 14:59:42] mv 14417834 shell_data.tar.gz
+  543  [2021-06-03 14:59:47] tar -zxvf shell_data.tar.gz
+  544  [2021-06-03 14:59:49] ls
+  545  [2021-06-03 14:59:51] ls -l
+  546  [2021-06-03 14:59:57] rm shell-data.tar.gz
+  547  [2021-06-03 15:07:18] clear
+  548  [2021-06-03 15:07:31] ls
+  549  [2021-06-03 15:07:32] cd shell_data
+  550  [2021-06-03 15:07:33] ls
+  551  [2021-06-03 15:10:43] code .
+  552  [2021-06-03 15:26:37] history
+```
+
+Pipes are very useful and can be used to combine lots of powerful commands!
+
+We can also use redirects `>` to redirect the output of a command into a file. Let's say we wanted to save the last 10 commands we used to a file to help document the steps we used.
+
+```bash=
+$ history | tail -n 10 > last_10_steps.sh
+```
+
+Here we've piped the output of history into tail to get the last 10 items and redirected the output into a shell (.sh) file called last_10_steps.sh.
+
+### Challenge answers with the shell
+Following on the from the challenges here (https://datacarpentry.org/wrangling-genomics/01-background/index.html), here are ways to get to the answer with the shell.
+
+Based on the metadata, can you answer the following questions?
+
+1. How many different generations exist in the data?
+2. How many rows and how many columns are in this data?
+3. How many citrate+ mutants have been recorded in Ara-3?
+4. How many hypermutable mutants have been recorded in Ara-3?
+
+Answer 1:
+
+```bash=
+$ cut -d, -f 2 Ecoli_metadata_composite.csv | sort | grep -v generation | uniq -c | wc -l
+25
+```
+
+Answer 2:
+
+```bash=
+# to get column number
+$ head -n 1 Ecoli_metadata_composite.csv | sed 's/,/\n/g' | wc -l
+
+# to get row number
+$ wc -l Ecoli_metadata_composite.csv
+63 Ecoli_metadata_composite.csv
+
+```
+
+Answer 3:
+
+```bash=
+# first do 
+$ cut -d, -f 12 Ecoli_metadata_composite.csv | sort | uniq -c | grep plus
+     10 plus
+```
+
+Answer 4:
+
+```bash=
+# first do 
+$ cut -d, -f 6 Ecoli_metadata_composite.csv | sort | uniq -c
+      7
+      3 Ara-3
+     46 None
+      1 mutator
+      6 plus
+
+# this returns counts of each unique item in column 6, from this we know that mutants are marked with the word `plus`
+$ cut -d, -f 6 Ecoli_metadata_composite.csv | sort | uniq -c | grep plus
+      6 plus
+```
+
+## Session 2
+
+Today's workshop will focus on using Google's interactive python notebooks via [Google Colaboratory](https://colab.research.google.com/).
+
+You will need a google account to use this service but just create one quickly for todays session using [this form](https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp).
+
+### Setup your colab session
+
+Once you've logged on to google colab you'll see a screen like this:
+![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/dev-hpc6/static/hpc6/colab-setup1.png?token=AE7LNUWWS2XSCKS6ONDOOJLBSUGJ2)
+
+From here select the GitHub tab
+
+![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/dev-hpc6/static/hpc6/colab-setup2.png?token=AE7LNUQD75YO2HQQOMQNXH3BSUGLA)
+
+In the Enter GitHub Url search box enter `https://github.com/ARCTraining/hpc6-life-sciences-2021-06` and it will populate a list of available notebook files.
+
+![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/dev-hpc6/static/hpc6/colab-setup3.png?token=AE7LNURBXOK5PGIQPCIRFILBSUGL4)
+
+
+Click the name of the notebook you want to open and it will open the notebook in a new tab
+
+![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/dev-hpc6/static/hpc6/colab-setup4.png?token=AE7LNUU2A2OLMZ63KHNEAXTBSUGMQ)
+
